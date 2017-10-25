@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systems>
+
+    <system name="Backend" id="backend">
+        <endpoints>
+            <endpoint id="services" protocol="rest" />
+        </endpoints>
+    </system>
+
+    <system name="Web Client" id="webclient">
+        <connections>
+            <connection system="backend" endpoint="services" />
+        </connections>
+    </system>
+
+</systems>

@@ -6,9 +6,13 @@ mod sysgraph;
 
 use sysgraph::args::{Args};
 
+
+
 fn main() {
 
-    let args = Args::parse();
+    let args = Args::parse().unwrap();
 
-    println!("Hello, world!");
+
+
+    println!("args => {:?}", args);
 }
