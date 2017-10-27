@@ -13,9 +13,9 @@ use std::str::FromStr;
 
 #[derive(Debug)]
 pub struct Args {
-    xml_file: PathBuf,
-    output_file: PathBuf ,
-    output_type: OutputType
+    pub spec_file: PathBuf,
+    pub output_file: PathBuf ,
+    pub output_type: OutputType
 }
 
 impl Args {
@@ -61,7 +61,7 @@ impl Args {
         let output_type= OutputType::from_str(output_type_str)?;
 
         let args = Args {
-            xml_file: PathBuf::from(spec),
+            spec_file: PathBuf::from(spec),
             output_file: PathBuf::from(output_file),
             output_type
         };

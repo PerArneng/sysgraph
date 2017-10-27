@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<systems>
+<components>
 
-    <system name="Backend" id="backend">
-        <endpoints>
-            <endpoint id="services" protocol="rest" />
-        </endpoints>
-    </system>
+    <component name="Backend" id="backend">
+        <exposes>
+            <interface id="services" protocol="rest" />
+        </exposes>
+    </component>
 
-    <system name="Web Client" id="webclient">
-        <connections>
-            <connection system="backend" endpoint="services" />
-        </connections>
-    </system>
+    <component name="Web Client" id="webclient">
+        <dependencies>
+            <dependency component="backend" interface="services" />
+        </dependencies>
+    </component>
 
-</systems>
+</components>
