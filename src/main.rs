@@ -1,13 +1,13 @@
 #![allow(unused_variables)]
-#[allow(dead_code)]
+#![allow(dead_code)]
 
 
-mod sysgraph;
-mod utils;
+extern crate sysgraph;
 
-use sysgraph::args::{Args};
+mod args;
+
+use args::{Args};
 use std::process;
-
 
 fn main() {
 
@@ -19,7 +19,7 @@ fn main() {
 
     let args = args_result.unwrap();
 
-    utils::ensure_file_exists(&args.spec_file);
+    sysgraph::utils::ensure_file_exists(&args.spec_file);
 
 
 
