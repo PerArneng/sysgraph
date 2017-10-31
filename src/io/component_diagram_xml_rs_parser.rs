@@ -1,6 +1,5 @@
 
 
-
 use xml::reader::{EventReader, XmlEvent};
 
 use model::{ComponentDiagram};
@@ -12,16 +11,18 @@ pub struct ComponentDiagramXmlRsParser {
 }
 
 impl ComponentDiagramXmlRsParser {
+
     pub fn new() -> ComponentDiagramXmlRsParser {
         return ComponentDiagramXmlRsParser {};
     }
-/*
-    fn parse_component_diagram<I>(&self, reader: I) -> Result<ComponentDiagram, String>
-        where I: Iterator<Item=Result<XmlEvent>>  {
+    
+    fn parse_component_diagram(&self, reader: &EventReader<&[u8]> )
+        //-> Result<ComponentDiagram, String>
+    {
 
         //reader.next();
 
-    }*/
+    }
 }
 
 impl ComponentDiagramParser for ComponentDiagramXmlRsParser {
@@ -29,7 +30,7 @@ impl ComponentDiagramParser for ComponentDiagramXmlRsParser {
     fn parse_bytes(&self, spec: &[u8]) -> Result<ComponentDiagram, String> {
         let parser = EventReader::new(spec);
 
-        //self.hi(&(parser.into_iter()));
+        self.parse_component_diagram(&parser);
 
         let mut components_name: &str;
 

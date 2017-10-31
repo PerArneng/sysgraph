@@ -5,3 +5,4 @@ authors = ["Per Arneng"]
 
 [dependencies]
 clap = "2.26.2"
+xml-rs = "0.7"
